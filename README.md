@@ -33,3 +33,29 @@ compilers: {
     }
   },
   ```
+  
+  - Create a new smart contract TodoList.sol
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.9.0;
+
+contract TodoList {
+    string public name = "Todo List Yongchang He";
+}
+```
+
+- Add TodoList  to `1_initial_migration.js` so that we can deploy TodoList.sol:
+
+```solidity
+const Migrations = artifacts.require("Migrations");
+const TodoList = artifacts.require("TodoList");
+
+module.exports = function (deployer) {
+  deployer.deploy(Migrations);
+  deployer.deploy(TodoList);
+};
+```
+- Run `truffle compile` to compile smart contracts:
+
+<img src=""
