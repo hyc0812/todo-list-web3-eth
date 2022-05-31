@@ -156,5 +156,5 @@ tasksCount
 Install truffle and web3 dependencies:
 ```linux
 npm i @truffle/contract
-npm intall web3
+npm install web3
 ```
