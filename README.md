@@ -153,3 +153,8 @@ tasksCount
 ```
 `1`
 
+Install truffle and web3 dependencies:
+```linux
+npm i @truffle/contract
+npm intall web3
+```
