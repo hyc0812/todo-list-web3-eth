@@ -136,5 +136,20 @@ truffle migrate --reset
 `'0x2ceb36a9581e1d8a997d4d181b09b31138174819'`
 > account[0] of your ganache server
 
+Get ETH balance of account[0]:
+```linux
 > web3.eth.getBalance(account)
+```
 `'99980299100000000000'`
+
+tasksCount
+```linux
+> taskCount = await todoListContract.tasksCount(account)
+> taskCount
+```
+`BN { negative: 0, words: [ 1, <1 empty item> ], length: 1, red: null }`
+```linux
+> taskCount.toNumber()
+```
+`1`
+
