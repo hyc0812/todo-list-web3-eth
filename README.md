@@ -126,3 +126,12 @@ contract TodoList {
 truffle compile
 truffle migrate --reset
 ```
+- Test deployment status again using `truffle console` (optional step):
+
+```linux
+> todoListContract = await TodoList.deployed()
+> account = await web3.eth.getCoinbase()
+> account
+```
+`'0x2ceb36a9581e1d8a997d4d181b09b31138174819'`
+
