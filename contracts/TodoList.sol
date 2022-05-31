@@ -2,5 +2,13 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract TodoList {
-    string public name = "Todo List Yongchang He";
+    
+    struct Task {
+        uint id;
+        string content;
+        bool completed;
+    }
+
+    event TaskCreated(uint id, string content, bool completed);
+    event TaskCompleted(uint id, bool completed);
 }
