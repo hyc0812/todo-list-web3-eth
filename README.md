@@ -134,4 +134,7 @@ truffle migrate --reset
 > account
 ```
 `'0x2ceb36a9581e1d8a997d4d181b09b31138174819'`
+> account[0] of your ganache server
 
+> web3.eth.getBalance(account)
+`'99980299100000000000'`
