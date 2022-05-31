@@ -80,4 +80,5 @@ truffle console
 ```
 `'Todo List Yongchang He'`
 
-<img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mapping_structure.png" width="550"/>
+<img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingStructure.png" width="450"/>
+<img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingExplained.png" width="450"/>
