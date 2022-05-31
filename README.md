@@ -58,4 +58,25 @@ module.exports = function (deployer) {
 ```
 - Run `truffle compile` to compile smart contracts:
 
-<img src=""
+<img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/truffleCompile.png" width="600"/>
+
+- Run `truffle migrate --reset` to deploy the contracts to local blockchain server hosted by Ganache:
+
+<img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/truffleMigrateReset.png" width="600"/>
+
+- Run truffle console to check previous work:
+
+```linux
+truffle console
+```
+- Using truffle console:
+```linux
+> todoListContract = await TodoList.deployed()
+> todoListContract
+```
+```linux
+> name = await todoListContract.name()
+> name
+```
+`'Todo List Yongchang He'`
+
