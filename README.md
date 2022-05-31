@@ -80,5 +80,81 @@ truffle console
 ```
 `'Todo List Yongchang He'`
 
+- Update smart contract TodoList.sol:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.4.22 <0.9.0;
+contract TodoList {
+    struct Task {
+        uint id;
+        string content;
+        bool completed;
+    }
+    // define event
+    event TaskCreated(uint id, string content, bool completed);
+    event TaskToggled(uint id, bool completed);
+    // define mapping
+    mapping (address => mapping(uint => Task)) public tasks;
+    mapping (address => uint) public tasksCount;
+    // Initialize the contract
+    constructor() {
+        createTask("Hello World");
+    }
+    // Create a new task
+    function createTask(string memory _content) public {
+        uint taskCount = tasksCount[msg.sender];
+        tasks[msg.sender][taskCount] = Task(taskCount, _content, false);
+        emit TaskCreated(taskCount, _content, false);
+        tasksCount[msg.sender]++;
+    }
+    // Toggle the completion of a task
+    function toggleCompleted(uint _id) public {
+        Task storage task = tasks[msg.sender][_id];
+        task.completed = !task.completed;
+        emit TaskToggled(_id, task.completed);
+    }
+}
+```
+
 <img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingStructure.png" width="450"/>
 <img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingExplained.png" width="450"/>
+
+- Deploy updated smart contract:
+
+```linux
+truffle compile
+truffle migrate --reset
+```
+- Test deployment status again using `truffle console` (optional step):
+
+```linux
+> todoListContract = await TodoList.deployed()
+> account = await web3.eth.getCoinbase()
+> account
+```
+`'0x2ceb36a9581e1d8a997d4d181b09b31138174819'`
+> account[0] of your ganache server
+
+Get ETH balance of account[0]:
+```linux
+> web3.eth.getBalance(account)
+```
+`'99980299100000000000'`
+
+tasksCount
+```linux
+> taskCount = await todoListContract.tasksCount(account)
+> taskCount
+```
+`BN { negative: 0, words: [ 1, <1 empty item> ], length: 1, red: null }`
+```linux
+> taskCount.toNumber()
+```
+`1`
+
+Install truffle and web3 dependencies:
+```linux
+npm i @truffle/contract
+npm install web3
+```
