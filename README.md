@@ -11,7 +11,7 @@ npx create-next-app@latest --ts
 ```linux
 truffle init
 ```
-- uncomment development and compiler code in the truffle-config.js
+- Uncomment development and compiler code in the truffle-config.js
 ```solidity
 development: {
      host: "127.0.0.1",     // Localhost (default: none)
