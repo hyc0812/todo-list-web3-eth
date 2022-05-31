@@ -119,3 +119,10 @@ contract TodoList {
 
 <img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingStructure.png" width="450"/>
 <img src="https://github.com/hyc0812/todo-list-web3-eth/blob/master/imgs/mappingExplained.png" width="450"/>
+
+- Deploy updated smart contract:
+
+```linux
+truffle compile
+truffle migrate --reset
+```
