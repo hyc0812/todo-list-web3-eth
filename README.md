@@ -153,6 +153,25 @@ tasksCount
 ```
 `1`
 
+```linux
+> theTask = await todoListContract.tasks(account, 0)
+> theTask[0]
+```
+`BN { negative: 0, words: [ 0, <1 empty item> ], length: 1, red: null }`
+```linux
+> theTask[1]
+```
+`'Hello World'`
+
+- Using Chakra to accelerate the front-end development
+[Link](https://chakra-ui.com/guides/getting-started/nextjs-guide)
+
+install dependencies:
+```linux
+npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+```
+
+
 Install truffle and web3 dependencies:
 ```linux
 npm i @truffle/contract
