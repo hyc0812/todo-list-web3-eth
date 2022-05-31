@@ -158,3 +158,5 @@ Install truffle and web3 dependencies:
 npm i @truffle/contract
 npm install web3
 ```
+### References
+https://github.com/facundocarballo/todoListETH
